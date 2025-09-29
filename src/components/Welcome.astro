@@ -1,11 +1,47 @@
----
-import TextBlurReveal from "./TextBlurReveal.astro";
----
-<div class="hero bg-base-200 min-h-screen">
-    <div class="hero-content text-center">
-        <div class="max-w-md">
-            <TextBlurReveal/>
-            <button class="btn btn-primary">Get Started</button>
-        </div>
+<div class="text-center">
+    <div class="max-w-md blur-reveal-container">
+        <h1 class="">Welcome to</h1>
+        <h2 class="font-bold text-4xl text-[#66cc8a]">Hakurei UniTask</h2>
+        <p class="py-4 italic">
+            "Organize Your Campus Life with Hakurei UniTask"
+        </p>
     </div>
 </div>
+
+<style is:global>
+    .blur-reveal-container > * {
+        opacity: 0;
+        filter: blur(5px);
+
+        animation: reveal 1.5s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    }
+
+    .blur-reveal-container h1 {
+        animation-delay: 0.2s;
+    }
+
+    .blur-reveal-container h2 {
+        animation-delay: 0.5s;
+    }
+
+    .blur-reveal-container p {
+        animation-delay: 0.9s;
+    }
+
+    .blur-reveal-container .btn {
+        animation-delay: 1.3s;
+    }
+
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+    }
+</style>
