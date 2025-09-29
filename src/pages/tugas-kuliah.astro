@@ -1,0 +1,110 @@
+---
+import Layout from "../layouts/Layout.astro";
+import tasksJson from '../../data/tasks.json';
+const tasksByCourse = tasksJson.data;
+---
+<Layout title="Tugas Kuliah | Hakurei UniTask">
+    <div class="pt-10">
+        <div class="blur-reveal-container">
+            <div class="py-4 text-center">
+                <img src="/images/tugas_kuliah.png" alt="Tugas Kuliah"/>
+            </div>
+
+            <div class="mt-8 flex flex-col gap-2">
+                {tasksByCourse.map((course, index) => (
+                        <div tabindex={index} class="collapse collapse-plus bg-base-100 border-base-300 border">
+                            <div class="collapse-title font-semibold">
+                                {course.courseName}
+                            </div>
+                            <div class="collapse-content">
+                                {course.weeklyTasks.map((week) => (
+                                        <div class="mb-4">
+                                            <h3 class="font-bold mb-1 text-neutral">{week.weekTitle}</h3>
+                                            <div class="text-sm space-y-2">
+                                                {week.tasks.map((task) => {
+
+                                                    if (typeof task === 'string') {
+                                                        return <p>{task}</p>;
+                                                    }
+
+                                                    if (typeof task === 'object' && task !== null) {
+                                                        switch (task.type) {
+                                                            case 'text':
+                                                                return <p>{task.content}</p>;
+                                                            case 'quote':
+                                                                return (
+                                                                        <blockquote
+                                                                                class="p-2 my-1 italic border-s-4 bg-base-200 border-base-content/20">
+                                                                            {task.content}
+                                                                        </blockquote>
+                                                                );
+                                                            case 'link':
+                                                                return (
+                                                                        <p>
+                                                                            {task.text}
+                                                                            <a href={task.url} target="_blank"
+                                                                               rel="noopener noreferrer"
+                                                                               class="link link-secondary block truncate">
+                                                                                {task.url}
+                                                                            </a>
+                                                                        </p>
+                                                                );
+                                                        }
+                                                    }
+                                                    return null;
+                                                })}
+                                            </div>
+                                        </div>
+                                ))}
+                            </div>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</Layout>
+
+{/* Style dan Script tetap sama persis, tidak perlu diubah */}
+<style is:global>
+    .blur-reveal-container > div {
+        opacity: 0;
+        filter: blur(5px);
+        animation-name: reveal;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<script>
+    const container = document.querySelector('.blur-reveal-container');
+    if (container) {
+        const children = container.children;
+
+        const initialDelay = 0.5;
+        const staggerDelay = 0.4;
+        const baseDuration = 1;
+        const durationIncrement = 0.5;
+
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i] as HTMLElement;
+
+            child.style.animationDelay = `${initialDelay + (i * staggerDelay)}s`;
+
+            const currentDuration = baseDuration + (i * durationIncrement);
+            child.style.animationDuration = `${currentDuration}s`;
+        }
+    }
+</script>
