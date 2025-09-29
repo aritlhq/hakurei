@@ -1,35 +1,44 @@
-<div class="text-center">
-    <div class="max-w-md blur-reveal-container">
-        <h1 class="">Welcome to</h1>
-        <h2 class="font-bold text-4xl text-[#66cc8a]">Hakurei UniTask</h2>
-        <p class="py-4 italic">
-            "Organize Your Campus Life with Hakurei UniTask"
-        </p>
+---
+import JadwalKuliah from "./JadwalKuliah.astro";
+import TugasKuliah from "./TugasKuliah.astro";
+import Faq from "./Faq.astro";
+---
+<div class="pt-10">
+    <div class="blur-reveal-container">
+        <div class="py-4 text-center">
+            <h1 class="italic font-bold">Selamat datang di</h1>
+            <h2 class="text-5xl font-bold">Hakurei UniTask</h2>
+            <span class="italic">"Organize your campusLife with Hakurei UniTask"</span>
+        </div>
+        <div class="mt-10 flex flex-col gap-4">
+            <div class="flex gap-4 items-center">
+                <h2 class="text-left text-lg font-bold">Pintasan</h2>
+                <div class="bg-black h-[2px] w-full"></div>
+            </div>
+            <a href="/jadwal-kuliah" class="block transition-transform duration-300 ease-in-out hover:scale-105">
+                <JadwalKuliah/>
+            </a>
+            <a href="/tugas-kuliah" class="block transition-transform duration-300 ease-in-out hover:scale-105">
+                <TugasKuliah/>
+            </a>
+        </div>
+        <div class="mt-10 flex flex-col gap-4 text-left">
+            <div class="flex gap-4 items-center">
+                <h2 class="text-left text-lg font-bold">FAQ</h2>
+                <div class="bg-black h-[2px] w-full"></div>
+            </div>
+            <Faq/>
+        </div>
     </div>
 </div>
 
 <style is:global>
-    .blur-reveal-container > * {
+    .blur-reveal-container > div {
         opacity: 0;
         filter: blur(5px);
-
-        animation: reveal 1.5s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
-    }
-
-    .blur-reveal-container h1 {
-        animation-delay: 0.2s;
-    }
-
-    .blur-reveal-container h2 {
-        animation-delay: 0.5s;
-    }
-
-    .blur-reveal-container p {
-        animation-delay: 0.9s;
-    }
-
-    .blur-reveal-container .btn {
-        animation-delay: 1.3s;
+        animation-name: reveal;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+        animation-fill-mode: forwards;
     }
 
     @keyframes reveal {
@@ -45,3 +54,24 @@
         }
     }
 </style>
+
+<script>
+    const container = document.querySelector('.blur-reveal-container');
+    if (container) {
+        const children = container.children;
+
+        const initialDelay = 0.5;
+        const staggerDelay = 0.4;
+        const baseDuration = 1;
+        const durationIncrement = 0.5;
+
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i] as HTMLElement;
+
+            child.style.animationDelay = `${initialDelay + (i * staggerDelay)}s`;
+
+            const currentDuration = baseDuration + (i * durationIncrement);
+            child.style.animationDuration = `${currentDuration}s`;
+        }
+    }
+</script>

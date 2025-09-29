@@ -1,0 +1,16 @@
+---
+import faqs from '../../data/faq.json';
+---
+
+<div>
+    <div class="flex flex-col gap-2">
+        {faqs.map((faq, index) => (
+                <div tabindex={index} class="collapse collapse-plus bg-base-100 border-base-300 border">
+                    <div class="collapse-title font-semibold">{faq.question}</div>
+                    <div class="collapse-content text-sm">
+                        {faq.answer}
+                    </div>
+                </div>
+        ))}
+    </div>
+</div>
