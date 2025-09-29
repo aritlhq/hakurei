@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Apa itu Hakurei UniTask?",
+    "answer": "Hakurei UniTask adalah sebuah aplikasi web sederhana yang dirancang untuk membantu mahasiswa mengorganisir dan melihat informasi penting seputar kegiatan perkuliahan, seperti jadwal mata kuliah dan daftar tugas. Tujuannya adalah untuk menyediakan akses yang cepat dan mudah terhadap informasi akademik dalam satu tempat."
+  },
+  {
+    "question": "Apakah ini gratis?",
+    "answer": " Ya, Hakurei UniTask sepenuhnya gratis untuk digunakan. Aplikasi ini merupakan sebuah proyek pribadi yang dibuat untuk mempermudah manajemen informasi tugas kelas."
+  },
+  {
+    "question": "Bisakah saya menambahkan atau mengubah data tugas sendiri?",
+    "answer": "   Untuk saat ini, fitur untuk menambahkan atau mengubah data secara mandiri oleh pengguna belum tersedia. Semua informasi seperti jadwal dan tugas dikelola dan diperbarui oleh administrator. Jika ada perubahan atau tambahan, silakan hubungi pengelola."
+  }
+]

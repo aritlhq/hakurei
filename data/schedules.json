@@ -1,0 +1,50 @@
+[
+  {
+    "courseName": "KERJA PRAKTEK",
+    "lecturer": "MAULANA ARDHIANSYAH",
+    "day": "Senin",
+    "time": "08.50 - 10.30"
+  },
+  {
+    "courseName": "MOBILE PROGRAMMING",
+    "lecturer": "FARIDA NURLAILA",
+    "day": "Senin",
+    "time": "13.00 - 14.40"
+  },
+  {
+    "courseName": "SISTEM PENDUKUNG KEPUTUSAN",
+    "lecturer": "SAPRUDIN",
+    "day": "Selasa",
+    "time": "08.50 - 10.30"
+  },
+  {
+    "courseName": "TEKNOLOGI INTERNET OF THINGS",
+    "lecturer": "CENDRA HARMON",
+    "day": "Selasa",
+    "time": "10.30 - 12.10"
+  },
+  {
+    "courseName": "REKAYASA PERANGKAT LUNAK",
+    "lecturer": "ULIYATUNISA",
+    "day": "Rabu",
+    "time": "07.10 - 08.50"
+  },
+  {
+    "courseName": "PEMROGRAMAN II",
+    "lecturer": "SEPTA",
+    "day": "Rabu",
+    "time": "08.50 - 10.30"
+  },
+  {
+    "courseName": "BASIS DATA II",
+    "lecturer": "MAULANA FANSYURI",
+    "day": "Jumat",
+    "time": "08.50 - 10.30"
+  },
+  {
+    "courseName": "TEKNIK KOMPILASI",
+    "lecturer": "IIS AISYAH",
+    "day": "Jumat",
+    "time": "10.30 - 12.10"
+  }
+]
