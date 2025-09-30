@@ -1,7 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import tasksJson from '../../data/tasks.json';
-const tasksByCourse = tasksJson.data;
+import CourseTasks from "../components/CourseTasks.astro";
+import coursesList from '../../data/tasks.json';
+
+const allTaskModules = await import.meta.glob('../../data/tasks/*.json', {eager: true});
+
+const courses = Array.isArray(coursesList) ? coursesList : coursesList.data;
+
+const tasksByCourse = courses.map(course => {
+    const taskFilePath = `../../data/tasks/${course.slug}.json`;
+    const taskModule = allTaskModules[taskFilePath];
+
+    return {
+        courseName: course.courseName,
+        weeklyTasks: taskModule && taskModule.default ? taskModule.default : []
+    };
+});
 ---
 <Layout title="Tugas Kuliah | Hamba Kampus">
     <div class="pt-10">
@@ -12,59 +26,13 @@ const tasksByCourse = tasksJson.data;
 
             <div class="mt-8 flex flex-col gap-2">
                 {tasksByCourse.map((course, index) => (
-                        <div tabindex={index} class="collapse collapse-plus bg-base-100 border-base-300 border">
-                            <div class="collapse-title font-semibold">
-                                {course.courseName}
-                            </div>
-                            <div class="collapse-content">
-                                {course.weeklyTasks.map((week) => (
-                                        <div class="mb-4">
-                                            <h3 class="font-bold mb-1 text-neutral">{week.weekTitle}</h3>
-                                            <div class="text-sm space-y-2">
-                                                {week.tasks.map((task) => {
-
-                                                    if (typeof task === 'string') {
-                                                        return <p>{task}</p>;
-                                                    }
-
-                                                    if (typeof task === 'object' && task !== null) {
-                                                        switch (task.type) {
-                                                            case 'text':
-                                                                return <p>{task.content}</p>;
-                                                            case 'quote':
-                                                                return (
-                                                                        <blockquote
-                                                                                class="p-2 my-1 italic border-s-4 bg-base-200 border-base-content/20">
-                                                                            {task.content}
-                                                                        </blockquote>
-                                                                );
-                                                            case 'link':
-                                                                return (
-                                                                        <p>
-                                                                            {task.text}
-                                                                            <a href={task.url} target="_blank"
-                                                                               rel="noopener noreferrer"
-                                                                               class="link link-secondary block truncate">
-                                                                                {task.url}
-                                                                            </a>
-                                                                        </p>
-                                                                );
-                                                        }
-                                                    }
-                                                    return null;
-                                                })}
-                                            </div>
-                                        </div>
-                                ))}
-                            </div>
-                        </div>
+                        <CourseTasks course={course} index={index}/>
                 ))}
             </div>
         </div>
     </div>
 </Layout>
 
-{/* Style dan Script tetap sama persis, tidak perlu diubah */}
 <style is:global>
     .blur-reveal-container > div {
         opacity: 0;
@@ -92,17 +60,13 @@ const tasksByCourse = tasksJson.data;
     const container = document.querySelector('.blur-reveal-container');
     if (container) {
         const children = container.children;
-
         const initialDelay = 0.5;
         const staggerDelay = 0.4;
         const baseDuration = 1;
         const durationIncrement = 0.5;
-
         for (let i = 0; i < children.length; i++) {
-            const child = children[i] as HTMLElement;
-
+            const child = children[i];
             child.style.animationDelay = `${initialDelay + (i * staggerDelay)}s`;
-
             const currentDuration = baseDuration + (i * durationIncrement);
             child.style.animationDuration = `${currentDuration}s`;
         }
