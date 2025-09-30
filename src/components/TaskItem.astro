@@ -1,0 +1,8 @@
+---
+import {renderTaskToHtml} from '../utils/taskRenderer.js';
+
+const {task} = Astro.props;
+const taskHtml = renderTaskToHtml(task);
+---
+
+<Fragment set:html={taskHtml}/>
