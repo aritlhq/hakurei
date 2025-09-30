@@ -1,0 +1,61 @@
+[
+  {
+    "weekTitle": "Minggu 1",
+    "tasks": [
+      {
+        "type": "text",
+        "content": "Perkenalan mahasiswa dengan dosen."
+      },
+      {
+        "type": "text",
+        "content": "Kontrak perkuliahan."
+      }
+    ]
+  },
+  {
+    "weekTitle": "Minggu 2",
+    "tasks": [
+      {
+        "type": "text",
+        "content": "Latihan setup Microsoft SQL Server."
+      },
+      {
+        "type": "text",
+        "content": "Tugas:"
+      },
+      {
+        "type": "quote",
+        "content": "Unduh & install Microsoft SQL Server. Setelah selesai, tulis nama dan NIM kalian di dalam query console. Ss full layar, lalu kirimkan ke google form berikut."
+      },
+      {
+        "type": "link",
+        "text": "Link form",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSf4DSJLP1Gp6f11ef4qgAOfBw3j2xYJK2X5FIfy585t1UVZKA/viewform"
+      }
+    ]
+  },
+  {
+    "weekTitle": "Minggu 3",
+    "tasks": [
+      {
+        "type": "text",
+        "content": "Latihan fungsi-fungsi pada Microsoft SQL Server."
+      },
+      {
+        "type": "link",
+        "text": "Tugas:",
+        "url": "https://rentry.co/basisdata2"
+      },
+      {
+        "type": "link",
+        "text": "Kumpulkan di google form berikut:",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSf4DSJLP1Gp6f11ef4qgAOfBw3j2xYJK2X5FIfy585t1UVZKA/viewform"
+      }
+    ]
+  },
+  {
+    "weekTitle": "Minggu 4 (29 September - 4 Oktober 2025)",
+    "tasks": [
+    ]
+  }
+]

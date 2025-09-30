@@ -1,0 +1,77 @@
+[
+  {
+    "weekTitle": "Minggu 1",
+    "tasks": [
+      {
+        "type": "text",
+        "content": "Perkenalan mahasiswa dengan dosen"
+      },
+      {
+        "type": "text",
+        "content": "Kontrak perkuliahan."
+      },
+      {
+        "type": "text",
+        "content": "Penjelasan mengenai alur KP."
+      },
+      {
+        "type": "text",
+        "content": "Survey lokasi instansi untuk dijadikan tempat KP."
+      }
+    ]
+  },
+  {
+    "weekTitle": "Minggu 2",
+    "tasks": [
+      {
+        "type": "text",
+        "content": "Tugas:"
+      },
+      {
+        "type": "quote",
+        "content": "Mengumpulkan tugas surat pengantar dan surat balasan & membuat infografis."
+      },
+      {
+        "type": "link",
+        "text": "Kumpulkan tugas di google form:",
+        "url": "https://forms.gle/h8hzEEV7ozaPJzMd6"
+      }
+    ]
+  },
+  {
+    "weekTitle": "Minggu 3",
+    "tasks": [
+      {
+        "type": "text",
+        "content": "Tugas:"
+      },
+      {
+        "type": "quote",
+        "content": "Siapkan 3 judul yang akan didiskusikan oleh dosen dan setiap kelompok, dan berikan hasil diskusi awal dengan pihak KP-nya."
+      }
+    ]
+  },
+  {
+    "weekTitle": "Minggu 4 (29 September - 4 Oktober 2025)",
+    "tasks": [
+      {
+        "type": "text",
+        "content": "Tugas:"
+      },
+      {
+        "type": "quote",
+        "content": "Silahkan join, minimal perwakilan kelompok agar bisa paham untuk submit jurnal pada luaran laporan KP. Sosialisasi dimulai pada 1 Oktober 2025."
+      },
+      {
+        "type": "link",
+        "text": "Pendaftaran:",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSdzBif6wdq2niM0sdUvPWpc_xdFTmhQL9_hTUx7c66_0yagBA/viewform"
+      },
+      {
+        "type": "link",
+        "text": "Zoom:",
+        "url": "https://us06web.zoom.us/j/85455839120?pwd=HZfen8QTmX4KvGm7Xzqsl3GjkOVctM.1#success"
+      }
+    ]
+  }
+]
