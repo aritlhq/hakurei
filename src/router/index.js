@@ -1,28 +1,25 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import AppLayout from "../layouts/AppLayout.vue";
-import Welcome from "../components/Welcome.vue";
-import ClassSchedulePage from "../views/ClassSchedulePage.vue";
+import AppLayout from "../layouts/AppLayout.vue"
+import Welcome from "../components/Welcome.vue"
+import ClassSchedulePage from "../views/ClassSchedulePage.vue"
 
 
 const routes = [
     {
         path: '/',
         component: AppLayout,
-        children:
+        children: [
             {
                 path: '',
                 name: 'home',
                 component: Welcome,
             },
-    },
-    {
-        path: '/',
-        component: AppLayout,
-        children: {
-            path: 'jadwal-kuliah',
-            name: 'classSchedule',
-            component: ClassSchedulePage,
-        }
+            {
+                path: 'jadwal-kuliah',
+                name: 'classSchedule',
+                component: ClassSchedulePage,
+            },
+        ],
     },
 ]
 
