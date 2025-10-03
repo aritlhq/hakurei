@@ -1,5 +1,6 @@
 <script setup>
 import {onMounted} from 'vue';
+import CalendarIcon from "../../public/icons/CalendarIcon.vue";
 
 onMounted(() => {
   const container = document.querySelector('.blur-reveal-container');
