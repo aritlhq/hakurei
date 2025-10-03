@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import AppLayout from "../layouts/AppLayout.vue"
 import Welcome from "../components/Welcome.vue"
 import ClassSchedulePage from "../views/ClassSchedulePage.vue"
+import Administration from "../views/Administration.vue";
 
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
                 path: 'jadwal-kuliah',
                 name: 'classSchedule',
                 component: ClassSchedulePage,
+            },
+            {
+                path: 'administrasi',
+                name: 'Administration',
+                component: Administration,
             },
         ],
     },
